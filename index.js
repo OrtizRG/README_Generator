@@ -78,7 +78,12 @@ const generatePage = (userName, githubName) => {
     `;
   };
 
-console.log(generatePage(name, github));
+fs.writeFile('index.md', generatePage(name, github), err => {
+    if (err) throw err;
+
+    console.log('Porfolio complete!')
+    
+});
   
 
 // TODO: Create a function to initialize app
